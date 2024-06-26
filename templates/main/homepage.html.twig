@@ -1,0 +1,32 @@
+<h1>galaxyProject: yours truly galaxyProject in symfony</h1>
+<div>
+    Browse through {{ numberOfStarships*10 }} starships!
+    {% if numberOfStarships > 1 %}
+        <p>
+            That's a lot of starships!
+        </p>
+
+    {% endif %}
+</div>
+
+<div>
+    <h2>Starships</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ myShip.name }}</td>
+        </tr>
+        <tr>
+            <th>Model</th>
+            <td>{{ myShip.model }}</td>
+        </tr>
+        <tr>
+            <th>Manufacturer</th>
+            <td>{{ myShip.manufacturer }}</td>
+        </tr>
+        <tr>
+            <th>Cost in credits</th>
+            <td>{{ myShip.cost_in_credits }}</td>
+        </tr>
+    </table>
+</div>
