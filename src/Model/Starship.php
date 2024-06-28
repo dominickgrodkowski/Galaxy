@@ -12,6 +12,9 @@ public function __construct(
     private string $costInCredits,
 )
 {
+{
+
+}
 
 }
 
