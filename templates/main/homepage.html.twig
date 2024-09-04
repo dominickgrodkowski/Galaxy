@@ -6,11 +6,16 @@
 {% block body %}
 <h1>galaxyProject: yours truly galaxyProject in symfony</h1>
 <div>
-    Browse through {{ ships * 10 }} starships!
-    {% if numberOfStarships > 1 %}
-        <p>
-            That's a lot of starships!
-        </p>
+    Browse through {{ ships|length * 10 }} starships!
+    {% if ships|length > 2 %}
+        <p>That's a shipload of ships</p>
+        {#<ul>
+            {% for ship in ships %}
+                <li>{{ ship.name }}</li>
+            {% endfor %}
+        </ul>#}
+    {% else %}
+        <p>No starships found!</p>
 
     {% endif %}
 </div>
@@ -31,9 +36,6 @@
             <td>{{ myShip.manufacturer }}</td>
         </tr>
         <tr>
-            <th>Cost in credits</th>
-            <td>{{ myShip.cost_in_credits }}</td>
-        </tr>
     </table>
 </div>
 {% endblock %}

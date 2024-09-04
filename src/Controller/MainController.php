@@ -2,11 +2,10 @@
 
 namespace App\Controller;
 
-use App\Model\StarshipRepository;
+use App\Repository\StarshipRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Model\Starship;
 
 
 class MainController extends AbstractController

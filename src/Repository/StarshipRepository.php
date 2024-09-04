@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Repository;
 
+use App\Model\Starship;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepository
