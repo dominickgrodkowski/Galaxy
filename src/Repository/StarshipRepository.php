@@ -3,37 +3,40 @@
 namespace App\Repository;
 
 use App\Model\Starship;
+use App\Model\StarshipStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepository
 {
     public function __construct(private LoggerInterface $logger)
     {
-        $this->logger->info('Fetching starships from the database');
     }
+
     public function findAll(): array
     {
+        $this->logger->info('Starship collection retrieved');
+
         return [
             new Starship(
                 1,
-                'Millennium Falcon',
-                'YT-1300 light freighter',
-                'Corellian Engineering Corporation',
-                '100000'
+                'USS LeafyCruiser (NCC-0001)',
+                'Garden',
+                'Jean-Luc Pickles',
+                StarshipStatusEnum::IN_PROGRESS
             ),
             new Starship(
                 2,
-                'X-wing',
-                'T-65 X-wing',
-                'Incom Corporation',
-                '149999'
+                'USS Espresso (NCC-1234-C)',
+                'Latte',
+                'James T. Quick!',
+                StarshipStatusEnum::COMPLETED
             ),
             new Starship(
                 3,
-                'Star Destroyer',
-                'Imperial I-class Star Destroyer',
-                'Kuat Drive Yards',
-                '150000000'
+                'USS Wanderlust (NCC-2024-W)',
+                'Delta Tourist',
+                'Kathryn Journeyway',
+                StarshipStatusEnum::WAITING
             ),
         ];
     }
@@ -45,6 +48,7 @@ class StarshipRepository
                 return $starship;
             }
         }
+
         return null;
     }
 }
